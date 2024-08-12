@@ -19,21 +19,27 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   max-width: 112.5em;
-  }
-  
-  p, h1, h2, h3, h4, h5, h6 {
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-.appsection{
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-background-color: beige;
-padding: 1rem;
-height: 100vh;
+.appsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: beige;
+  padding: 1rem;
+  height: 100vh;
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,10 +48,10 @@ form{
   background-color: greenyellow;
   gap: 1rem;
 }
-input{
-padding: 1rem;
+input {
+  padding: 1rem;
 }
-button{
+button {
   padding: 1rem;
   width: 90%;
   background-color: chartreuse;
