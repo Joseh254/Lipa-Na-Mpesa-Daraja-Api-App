@@ -2,12 +2,24 @@ import "./App.css";
 import { useFormik } from "formik";
 
 function App() {
-  // Handle form submission
-  function handleSubmit(values) {
-    console.log(values);
+
+ async function handleSubmit(values) {
+    try {
+      const response = await fetch('/api/mpesa/initiate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+  
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Payment failed:', error);
+    }
   }
 
-  // Formik setup
   const formik = useFormik({
     initialValues: {
       phone: "",
@@ -21,7 +33,7 @@ function App() {
       if (!values.phone) {
         errors.phone = "Phone number is required";
       } else if (values.phone.length !== 10) {
-        errors.phone = "Phone number must be exactly 10 digits";
+        errors.phone = "Enter a valid phone number";
       }
 
 
