@@ -4,9 +4,8 @@ import pay from "./Routes/PayentRoute.js"
 import { config } from "dotenv";
 config()
 const app = express()
+app.use(express.json())
 app.use("/api/mpesa",pay)
 app.listen(process.env.PORT, () => {
 console.log("server running");
-
-
   });
